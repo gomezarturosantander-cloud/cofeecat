@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Coffee Cat Asunción | Tu refugio felino</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@300,1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        coffee: {
+                            dark: "#4A3B32",
+                            medium: "#8C7362",
+                            light: "#D4C4B7",
+                        },
+                        cream: "#FDFBF7",
+                        blush: "#FCE7E7",
+                        accent: "#D97777",
+                    },
+                    fontFamily: {
+                        sans: ["Nunito", "sans-serif"],
+                        serif: ["Fraunces", "serif"],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 1; }
+        body { background-color: #FDFBF7; color: #4A3B32; }
+        
+        /* Hero Background */
+        .hero-bg {
+            background-image: linear-gradient(rgba(74, 59, 50, 0.4), rgba(74, 59, 50, 0.7)), url('https://images.unsplash.com/photo-1574231164645-d6f0e8553590?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Animación para tarjetas de gatos */
+        .cat-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .cat-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(74, 59, 50, 0.1), 0 10px 10px -5px rgba(74, 59, 50, 0.04); }
+        .cat-img-wrapper img { transition: transform 0.7s ease; }
+        .cat-card:hover .cat-img-wrapper img { transform: scale(1.08); }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-blush selection:text-coffee-dark pb-20 md:pb-0">
+
+<!-- Navegación Fija -->
+<nav class="fixed w-full z-50 bg-cream/90 backdrop-blur-md shadow-sm border-b border-coffee-light/20 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="flex items-center gap-2 text-coffee-dark">
+            <span class="material-symbols-outlined text-3xl text-accent">pets</span>
+            <div class="text-2xl font-serif font-bold tracking-tight">Coffee Cat.</div>
+        </div>
+        
+        <div class="hidden md:flex gap-8 text-sm font-bold text-coffee-medium">
+            <a href="#experiencia" class="hover:text-accent transition">La Experiencia</a>
+            <a href="#gatitos" class="hover:text-accent transition">Nuestros Gatos</a>
+            <a href="#menu" class="hover:text-accent transition">Menú</a>
+            <a href="#historia" class="hover:text-accent transition">Nuestra Historia</a>
+        </div>
+        
+        <a href="https://wa.me/595900000000?text=Hola%20Coffee%20Cat,%20quiero%20reservar%20una%20mesa." target="_blank" class="hidden md:flex bg-accent text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-rose-500 transition items-center gap-2 shadow-md hover:shadow-lg">
+            <span class="material-symbols-outlined text-sm">calendar_month</span> Reservar Mesa
+        </a>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="hero-bg min-h-screen flex items-center justify-center text-center px-4 pt-20">
+    <div class="max-w-3xl flex flex-col items-center">
+        <span class="bg-blush text-accent px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">El primer Cat Café de Asunción</span>
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-cream mb-6 leading-tight drop-shadow-md">
+            Un café donde los gatos son los verdaderos dueños.
+        </h1>
+        <p class="text-cream/90 text-lg md:text-xl font-light mb-10 max-w-xl leading-relaxed drop-shadow">
+            Desconéctate del ruido de la ciudad. Disfruta de un café de especialidad, postres artesanales y la mejor compañía felina.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#gatitos" class="bg-cream text-coffee-dark px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition shadow-lg">Conoce a los Gatitos</a>
+            <a href="https://wa.me/595900000000" target="_blank" class="bg-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-rose-500 transition flex items-center justify-center gap-2 shadow-lg">
+                <span class="material-symbols-outlined">chat</span> Reservar Visita
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- La Experiencia -->
+<section id="experiencia" class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=800" alt="Gato descansando" class="rounded-[2.5rem] shadow-xl w-full object-cover h-[500px]">
+            <div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-3xl shadow-xl hidden md:block">
+                <div class="flex gap-1 text-yellow-400 mb-2">
+                    <span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span><span class="material-symbols-outlined">star</span>
+                </div>
+                <p class="font-serif text-coffee-dark font-bold text-lg">"La mejor terapia"</p>
+                <p class="text-xs text-coffee-medium">Google Reviews</p>
+            </div>
+        </div>
+        <div>
+            <h2 class="text-4xl md:text-5xl font-serif text-coffee-dark font-bold mb-6">Mucho más que una simple cafetería.</h2>
+            <p class="text-coffee-medium text-lg mb-6 leading-relaxed">
+                Entrar a Coffee Cat es dejar el estrés de Asunción en la puerta. Te recibimos en un ambiente climatizado, con música suave, aroma a café recién molido y ronroneos sanadores.
+            </p>
+            <p class="text-coffee-medium text-lg mb-8 leading-relaxed">
+                Nuestras instalaciones están diseñadas priorizando el bienestar de nuestros gatos rescatados. Aquí tú eres el invitado en su hogar.
+            </p>
+            <ul class="space-y-4 mb-8 text-coffee-dark font-bold">
+                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent bg-blush p-2 rounded-full">coffee</span> Café de especialidad</li>
+                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent bg-blush p-2 rounded-full">spa</span> Terapia anti-estrés garantizada</li>
+                <li class="flex items-center gap-3"><span class="material-symbols-outlined text-accent bg-blush p-2 rounded-full">wifi</span> Wi-Fi de alta velocidad para trabajar</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN GATITOS (AMPLIADA A 11 GATOS REALES) -->
+<section id="gatitos" class="py-24 bg-blush/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-accent font-bold tracking-widest uppercase text-sm mb-2 block">Los Dueños del Local</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-coffee-dark font-bold mb-4">Conoce a nuestra manada</h2>
+            <p class="text-coffee-medium max-w-2xl mx-auto text-lg">Cada uno de nuestros rescatados tiene una historia de superación y mucho amor para dar. Descubre quién será tu mejor compañía en esta visita.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- 1. Peka & Trol -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/doble.jpg.jpeg" class="w-full h-full object-cover" alt="Peka y Trol">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-yellow-500">group</span> El Dúo Dinámico
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Peka & Trol</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Dos hermanitos inseparables. Hacerles cariño a uno significa que el otro vendrá corriendo a pedir su cuota de mimos. ¡Doble ronroneo garantizado!</p>
+                </div>
+            </div>
+
+            <!-- 2. Pelusa -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/pelusa.jpg.jpeg" class="w-full h-full object-cover" alt="Pelusa">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-accent">diamond</span> La goat
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Pelusa</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Con su pelaje atigrado perfecto y mirada penetrante, ella sabe que es la reina del café. Le gusta observar todo desde los lugares más altos del local.</p>
+                </div>
+            </div>
+
+            <!-- 3. Braulio -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/bealio.jpg.jpeg" class="w-full h-full object-cover" alt="Braulio">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-slate-800">dark_mode</span> El Caballero
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Braulio</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Nuestro moñito rojo favorito. Un panterita rescatado que derrocha elegancia. Es un poco tímido al principio, pero ama que le rasquen suavemente detrás de las orejas.</p>
+                </div>
+            </div>
+
+            <!-- 4. Arthur -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/arturo.jpg.jpeg" class="w-full h-full object-cover" alt="Arturo">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-blue-500">visibility</span> programador
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Arturo</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Imposible no perderse en sus ojos celestes profundos. Es súper curioso y es muy probable que se acerque a oler tu café si te descuidas un segundo.</p>
+                </div>
+            </div>
+
+            <!-- 5. Libertad -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/libetad.jpg.jpeg" class="w-full h-full object-cover" alt="Libertad">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-emerald-500">eco</span> La Exploradora
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Libertad</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Su nombre lo dice todo. Fue rescatada y ahora vive su mejor vida explorando cada rincón de la cafetería con su elegante pelaje blanco y negro.</p>
+                </div>
+            </div>
+
+            <!-- 6. Ojito -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/ojito.jpg.jpeg" class="w-full h-full object-cover" alt="Ojito">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-accent">favorite</span> El Milagro
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Ojito</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Nuestro pequeño pirata hermoso. A pesar de haber perdido un ojito antes de su rescate, es el gatito más dulce, valiente y agradecido que conocerás hoy.</p>
+                </div>
+            </div>
+
+            <!-- 7. Wey -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/wey.jpg.jpeg" class="w-full h-full object-cover" alt="Wey">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-orange-500">local_fire_department</span> La Juguetona
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Wey</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Si ves un hilo o un juguete de plumas moviéndose rápido, Wey está cerca. Tiene energía inagotable y seguramente te invitará a jugar con ella un buen rato.</p>
+                </div>
+            </div>
+
+            <!-- 8. Rubi -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/rubi.jpg.jpeg" class="w-full h-full object-cover" alt="Rubi">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-yellow-600">lightbulb</span> La Tigresa
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Rubi</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Nuestra pequeña anaranjada. Como todo gato rubio, tiene una personalidad única, a veces un poco despistada pero extremadamente tierna y mimosa.</p>
+                </div>
+            </div>
+
+            <!-- 9. Yol -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/gato yol.jpg.jpeg" class="w-full h-full object-cover" alt="Yol">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-coffee-dark">coffee</span> El Guardián
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Yol</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Siempre atento a todo lo que pasa en el local. Tiene cara de serio y misterioso, pero su motor de ronroneo se enciende apenas te sientas a su lado.</p>
+                </div>
+            </div>
+
+            <!-- 10. Coca -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/caca.jpg.jpeg" class="w-full h-full object-cover" alt="Coca">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-green-500">spa</span> La Paz
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Coca</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Sus ojazos verdes te hipnotizan. Es la gatita más chill de la manada, la compañera ideal para hacerle compañía a quienes vienen a leer un libro o descansar.</p>
+                </div>
+            </div>
+
+            <!-- 11. Marmolada -->
+            <div class="bg-white rounded-[2rem] overflow-hidden shadow-sm border border-white/50 cat-card flex flex-col">
+                <div class="h-64 overflow-hidden relative cat-img-wrapper">
+                    <img src="gatos/mermelada.jpg.jpeg" class="w-full h-full object-cover" alt="Marmolada">
+                    <div class="absolute top-4 left-4 bg-white/90 backdrop-blur text-coffee-dark text-xs font-bold px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1">
+                        <span class="material-symbols-outlined text-sm text-pink-500">cake</span> La Dulzura
+                    </div>
+                </div>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-2xl font-serif font-bold text-coffee-dark mb-3">Marmolada</h3>
+                    <p class="text-coffee-medium text-sm leading-relaxed mb-6">Hace honor a su nombre con sus hermosos colores. Siempre tiene su moñito coqueto puesto y le encanta posar para las fotos de los clientes.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Galería Estilo Instagram -->
+<section class="py-16 bg-cream overflow-hidden">
+    <div class="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-8 px-4 scrollbar-hide">
+        <img src="https://images.unsplash.com/photo-1444419988131-046ed4e508c7?q=80&w=600" class="w-64 h-64 object-cover rounded-3xl snap-center shrink-0 shadow-sm" alt="Cafe y gato">
+        <img src="https://images.unsplash.com/photo-1529566193698-bc394125bb41?q=80&w=600" class="w-64 h-64 object-cover rounded-3xl snap-center shrink-0 shadow-sm" alt="Interior">
+        <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=600" class="w-64 h-64 object-cover rounded-3xl snap-center shrink-0 shadow-sm" alt="Gato">
+        <img src="https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=600" class="w-64 h-64 object-cover rounded-3xl snap-center shrink-0 shadow-sm" alt="Postres">
+        <img src="https://images.unsplash.com/photo-1501820488136-72669149e0d4?q=80&w=600" class="w-64 h-64 object-cover rounded-3xl snap-center shrink-0 shadow-sm" alt="Gato 2">
+    </div>
+    <div class="text-center mt-4">
+        <a href="https://instagram.com/coffeecat.py" target="_blank" class="inline-flex items-center gap-2 text-coffee-medium font-bold hover:text-accent transition">
+            Síguenos en Instagram @coffeecat.py <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+    </div>
+</section>
+
+<!-- Menú -->
+<section id="menu" class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="material-symbols-outlined text-4xl text-coffee-light mb-2">restaurant_menu</span>
+            <h2 class="text-4xl md:text-5xl font-serif text-coffee-dark font-bold mb-4">Nuestro Menú</h2>
+            <p class="text-coffee-medium">Preparado con amor, lejos de los pelos de gato (Prometido).</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h3 class="text-2xl font-serif font-bold text-coffee-dark border-b-2 border-blush pb-2 mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-accent">local_cafe</span> Cafetería
+                </h3>
+                <ul class="space-y-6">
+                    <li class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-coffee-dark text-lg">Catuccino</h4>
+                            <p class="text-sm text-coffee-medium">Capuchino con arte latte en forma de gatito.</p>
+                        </div>
+                        <span class="font-bold text-accent">Gs. 22.000</span>
+                    </li>
+                    <li class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-coffee-dark text-lg">Moka Helado "Garfield"</h4>
+                            <p class="text-sm text-coffee-medium">Café, chocolate, crema batida y caramelo.</p>
+                        </div>
+                        <span class="font-bold text-accent">Gs. 28.000</span>
+                    </li>
+                    <li class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-coffee-dark text-lg">Matcha Latte</h4>
+                            <p class="text-sm text-coffee-medium">Té verde premium con leche espumada.</p>
+                        </div>
+                        <span class="font-bold text-accent">Gs. 25.000</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-serif font-bold text-coffee-dark border-b-2 border-blush pb-2 mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-accent">cake</span> Pastelería
+                </h3>
+                <ul class="space-y-6">
+                    <li class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-coffee-dark text-lg">Red Velvet "Garra"</h4>
+                            <p class="text-sm text-coffee-medium">Porción de torta suave con frosting de queso.</p>
+                        </div>
+                        <span class="font-bold text-accent">Gs. 30.000</span>
+                    </li>
+                    <li class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-coffee-dark text-lg">Waffles con Helado</h4>
+                            <p class="text-sm text-coffee-medium">Acompañado de frutas y sirope de chocolate.</p>
+                        </div>
+                        <span class="font-bold text-accent">Gs. 35.000</span>
+                    </li>
+                    <li class="flex justify-between items-start">
+                        <div>
+                            <h4 class="font-bold text-coffee-dark text-lg">Chipitas Calientes</h4>
+                            <p class="text-sm text-coffee-medium">Canasta de chipas tradicionales (Ideal para compartir).</p>
+                        </div>
+                        <span class="font-bold text-accent">Gs. 15.000</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+            <button onclick="window.open('https://wa.me/595900000000?text=Hola,%20me%20pueden%20pasar%20el%20menú%20completo?', '_blank')" class="bg-cream text-coffee-dark font-bold px-8 py-3 rounded-full border border-coffee-light hover:bg-coffee-dark hover:text-white transition">Ver Menú Completo</button>
+        </div>
+    </div>
+</section>
+
+<!-- Misión / Historia -->
+<section id="historia" class="py-24 bg-coffee-dark text-cream">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Segundas oportunidades.</h2>
+            <p class="text-cream/80 text-lg mb-6 leading-relaxed">
+                Coffee Cat nació con una misión clara: darle un hogar digno a gatos rescatados de situaciones difíciles en Paraguay, mientras creamos un espacio de paz para las personas.
+            </p>
+            <p class="text-cream/80 text-lg mb-8 leading-relaxed">
+                No compramos animales. Todos nuestros felinos fueron rescatados, sanados y esterilizados. Al consumir en nuestra cafetería, estás ayudando directamente a mantener este refugio y a rescatar a más animales.
+            </p>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-accent text-5xl">volunteer_activism</span>
+                <p class="font-bold font-serif text-xl">Amor, café y ronroneos.</p>
+            </div>
+        </div>
+        <div class="relative">
+            <img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?q=80&w=800" class="rounded-[3rem] w-full h-[400px] object-cover shadow-2xl" alt="Gato rescatado">
+        </div>
+    </div>
+</section>
+
+<!-- Ubicación y Contacto -->
+<section class="py-24 bg-cream">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+        <div class="flex flex-col justify-center">
+            <h2 class="text-4xl font-serif text-coffee-dark font-bold mb-6">Ven a visitarnos</h2>
+            <p class="text-coffee-medium mb-8 text-lg">Estamos en una zona tranquila y accesible de Asunción. Recomendamos hacer reserva los fines de semana, ya que por el bienestar de los gatos, el cupo es limitado.</p>
+            
+            <div class="space-y-6 mb-8">
+                <div class="flex items-start gap-4">
+                    <div class="bg-blush p-3 rounded-full text-accent"><span class="material-symbols-outlined">location_on</span></div>
+                    <div>
+                        <h4 class="font-bold text-coffee-dark">Dirección</h4>
+                        <p class="text-coffee-medium text-sm">Barrio Carmelitas, Asunción, Paraguay.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="bg-blush p-3 rounded-full text-accent"><span class="material-symbols-outlined">schedule</span></div>
+                    <div>
+                        <h4 class="font-bold text-coffee-dark">Horario</h4>
+                        <p class="text-coffee-medium text-sm">Martes a Domingo: 14:00hs a 21:00hs<br>Lunes: Cerrado (Día de descanso felino)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/595900000000" target="_blank" class="bg-accent text-white font-bold py-4 rounded-xl hover:bg-rose-500 transition text-center shadow-lg w-full md:w-auto px-8">
+                Consultar Disponibilidad por WhatsApp
+            </a>
+        </div>
+        
+        <div class="rounded-[2rem] overflow-hidden shadow-lg h-[400px] border-4 border-white">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.728246419077!2d-57.5758913!3d-25.2864669!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE3JzExLjMiUyA1N8KwMzQnMzMuMiJX!5e0!3m2!1ses!2spy!4v1680000000000!5m2!1ses!2spy" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Bottom Nav Bar Mobile -->
+<div class="fixed bottom-0 left-0 w-full bg-white border-t border-coffee-light/20 z-50 md:hidden flex justify-around items-center py-3 px-2 shadow-[0_-5px_20px_rgba(74,59,50,0.08)]">
+    <a href="#gatitos" class="flex flex-col items-center text-coffee-medium hover:text-accent">
+        <span class="material-symbols-outlined text-xl">pets</span>
+        <span class="text-[10px] font-bold mt-1">Gatitos</span>
+    </a>
+    <a href="#menu" class="flex flex-col items-center text-coffee-medium hover:text-accent">
+        <span class="material-symbols-outlined text-xl">restaurant_menu</span>
+        <span class="text-[10px] font-bold mt-1">Menú</span>
+    </a>
+    <a href="https://wa.me/595900000000?text=Hola,%20quiero%20reservar%20una%20mesa." target="_blank" class="bg-accent text-white px-6 py-2.5 rounded-full flex gap-1 items-center justify-center shadow-md font-bold">
+        <span class="material-symbols-outlined text-sm">calendar_month</span>
+        <span class="text-xs">Reservar</span>
+    </a>
+</div>
+
+<!-- Footer -->
+<footer class="bg-coffee-dark pt-12 pb-24 md:pb-12 text-center text-cream/60 text-sm">
+    <div class="flex items-center justify-center gap-2 mb-4 text-cream">
+        <span class="material-symbols-outlined text-accent text-2xl">pets</span>
+        <span class="text-xl font-serif font-bold">Coffee Cat Asunción</span>
+    </div>
+    <p class="mb-2">Rescatamos con amor. Servimos con pasión.</p>
+    <p>© 2026 Coffee Cat. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
